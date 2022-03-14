@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+login
+{% endblock title %}
+{% block style %}
+
+{% endblock style %}
+{% block body %}
+<div class="container my-5" style="height:54vh;
+width:50vh;
+padding: 4vh;
+background: whitesmoke;"> 
+    <form action="login" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Username:</label>
+          <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password:</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn btn-primary center" style="position: relative;
+        left: 14vh;">Submit</button>
+      </form>
+</div>
+
+{% endblock body %}

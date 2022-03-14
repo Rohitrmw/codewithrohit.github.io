@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+BOOKING-PAGE
+{% endblock title %}
+{% block style %}
+<style>
+
+
+
+</style>
+
+{% endblock style %}
+{% block body %}
+<h1 class="text-center">welcome to booking page Mr {{request.user}}</h1>
+<div class="container" style="width: 50vw;">
+    <form id="new_booking" method="post" action="booking">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputtext1" class="form-label">Enter your USERName</label>
+            <input type="text" class="form-control" name="Name" placeholder="Enter your name." id="exampleInputtext1"
+                aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">contact no</label>
+            <input type="number" class="form-control" name="contact" placeholder="Enter your contact number."
+                id="exampleInputPassword1">
+        </div>
+        <div class="date" style="display: flex;">
+            <p>
+                <label for="date">Your Booking Date</label>
+                <input type="date" name="booking_date" id="date">
+            </p>
+        </div>
+        <label for="exampleDataList" class="form-label my-2">*----CHOOSE PLACE----*</label>
+        <input class="form-control" list="datalistOptions" name="booking_place" id="exampleDataList"
+            placeholder="SELECT YOUR PLACE">
+        <div class="option">
+            <datalist id="datalistOptions">
+                <option value="MUMBAI">MUMBAI</option>
+                <option value="DELHI">DELHI</option>
+                <option value="RAJASTHAN">RAJASTHAN</option>
+                <option value="BANGLORE">BANGLORE</option>
+                <option value="KASHMIR">KASHMIR</option>
+                <option value="GOA">GOA</option>
+            </datalist>
+        </div>
+        <div class="child my-4" style="display: flex;">
+            <p>
+                <label for="number">ADULTS(18+)</label>
+                <input type="number" id="number" name="adult" placeholder="0">
+            </p>
+            <p class="mx-2">
+                <label for="number">children(0-17)</label>
+                <input type="number" id="number1" name="children" placeholder="0">
+            </p>
+        </div>
+
+</div>
+
+<button type="submit" class="btn btn-primary text-center" style="position:relative; left:48vw;">Submit</button>
+</form>
+</div>
+
+{% endblock body %}

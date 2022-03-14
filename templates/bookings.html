@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+login
+{% endblock title %}
+{% block style %}
+
+{% endblock style %}
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">SrNO</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">booking_date</th>
+        <th scope="col">booking_place</th>
+        <th scope="col">adult</th>
+        <th scope="col">children</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{book.Name}}</td>
+                <td>{{book.email}}</td>
+                <td>{{book.contact}}</td>
+                <td>{{book.booking_date}}</td>
+                <td>{{book.booking_place}}</td>
+                <td>{{book.adult}}</td>
+                <td>{{book.children}}</td>
+                
+            </tr>
+        
+        
+        {% endfor %}
+     
+    </tbody>
+  </table>
+
+{% endblock body %}

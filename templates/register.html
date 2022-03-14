@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+register
+{% endblock title %}
+{% block style %}
+{% endblock style %}
+{% block body %}
+<div class="container my-3" style="width: 50vw;">
+  <h1 class="head text-center">REGISTER PAGE</h1>
+    <form action="register" method="post">
+        {% csrf_token %}
+        
+          
+          <div class="mb-3">
+            <label for="fname" class="form-label">first name</label>
+            <input type="text" class="form-control" id="fname" name="fname" aria-describedby="emailHelp">
+            
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label">last name</label>
+            <input type="text" class="form-control" id="lname" name="lname" aria-describedby="emailHelp">
+            
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">phone number</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="phone" aria-describedby="emailHelp">
+            
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">username</label>
+            <input type="text" class="form-control" id="name" name="username" aria-describedby="emailHelp">
+            
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="pass" id="exampleInputPassword1">
+        </div>
+        <div class="buttt text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="Reset" class="btn btn-primary px-3">Reset</button>
+      </div>
+      </form>
+
+      
+      
+</div>
+{% endblock body %}
